@@ -2,10 +2,15 @@
   function googleLogin() {
       window.location.replace("https://login.hax0rsearch.com:8081/login/google")
   }
+
+  window.addEventListener("load", () => {
+      document.getElementById("tokendata").innerHTML = document.cookie	
+  })
 </script>
 
 <h1>Birds of a feather flock together</h1>
 
 <button onclick="googleLogin()">login with google</button>
 
-<p></p>
+<h2>Your google id_token</h2>
+<p id="tokendata"></p>

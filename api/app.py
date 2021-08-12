@@ -52,7 +52,7 @@ async def login(request: Request):
     redirect = RedirectResponse(
         "https://login.hax0rsearch.com:8080",
         headers = {
-            "set-cookie": f"token=${json.dumps(token)}; domain=login.hax0rsearch.com:8080;"
+            "set-cookie": f"token={token['id_token']}; domain=login.hax0rsearch.com; path=/;"
         }
     )
     return redirect
