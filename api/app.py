@@ -1,4 +1,5 @@
 import json
+import os
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
@@ -36,7 +37,7 @@ app.add_middleware(
 
 app.add_middleware(
     SessionMiddleware,
-    secret_key="123"
+    secret_key=os.getenv("sessionpass")
 )
 
 @app.get("/login/google")
